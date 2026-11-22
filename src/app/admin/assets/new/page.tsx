@@ -1,0 +1,1 @@
+import AssetForm from "@/components/admin/AssetForm";import {supabaseAdmin} from "@/lib/supabase-admin";export default async function NewAsset(){const {data}=await supabaseAdmin.from("categories").select("id,name").order("name");return <><h1 className="mb-6 text-3xl font-bold">Create asset</h1><AssetForm categories={data||[]}/></>}

@@ -1,0 +1,1 @@
+import {supabaseAdmin} from "@/lib/supabase-admin";import CategoryManager from "@/components/admin/CategoryManager";export const dynamic="force-dynamic";export default async function Categories(){const {data}=await supabaseAdmin.from("categories").select("*").order("name");return <><h1 className="mb-6 text-3xl font-bold">Categories</h1><CategoryManager categories={data||[]}/></>}
